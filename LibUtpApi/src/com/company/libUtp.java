@@ -31,17 +31,6 @@ public String getSystemInfo() throws IOException {
     String flimp; //return
 
 
-    URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-    HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-    con.setRequestMethod("POST");
-
-    con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-    con.setRequestProperty("Accept", "application/json");
-
-    con.setDoOutput(true);
 
     JSONObject jo = new JSONObject();
 
@@ -54,47 +43,16 @@ public String getSystemInfo() throws IOException {
 
 
 
-    try(OutputStream os = con.getOutputStream()) {
-        byte[] input = jsonInputString.getBytes("utf-8");
-        os.write(input, 0, input.length);
 
-
+         flimp = respAll(jsonInputString);
+        return flimp;
     }
-
-
-
-
-    try(BufferedReader br = new BufferedReader(
-            new InputStreamReader(con.getInputStream(), "utf-8"))) {
-        StringBuilder response = new StringBuilder();
-        String responseLine = null;
-        while ((responseLine = br.readLine()) != null) {
-            response.append(responseLine.trim());
-        }
-       // System.out.println(response.toString());
-        flimp = response.toString();
-    }
-
-return flimp;
-}
 
     public String getProfileStatus() throws IOException {
 
 
         String flimp; //return
 
-
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -106,28 +64,7 @@ return flimp;
         jsonInputString = jo.toString();
 
 
-
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -136,18 +73,6 @@ return flimp;
 
         String flimp; //return
 
-
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -168,27 +93,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-      try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -197,18 +103,6 @@ return flimp;
 
         String flimp; //return
 
-
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -228,27 +122,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -258,17 +133,7 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
 
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -289,27 +154,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -318,18 +164,6 @@ return flimp;
 
         String flimp; //return
 
-
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -351,27 +185,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -381,25 +196,10 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
         JSONObject ji = new JSONObject();
-
-
-
-
 
         System.out.println(ji.toString());
 
@@ -412,27 +212,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
     public String getContactGroups() throws IOException {
@@ -441,24 +222,9 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
-
         JSONObject jo = new JSONObject();
 
         JSONObject ji = new JSONObject();
-
-
-
 
 
         System.out.println(ji.toString());
@@ -472,27 +238,7 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -501,18 +247,6 @@ return flimp;
 
         String flimp; //return
 
-
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -533,27 +267,7 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -563,24 +277,12 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
         JSONObject ji = new JSONObject();
 
         ji.put("filter", filter);
-
 
 
         System.out.println(ji.toString());
@@ -594,27 +296,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -624,17 +307,6 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
@@ -658,27 +330,7 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
 
@@ -688,25 +340,12 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
 
         JSONObject jo = new JSONObject();
 
         JSONObject ji = new JSONObject();
 
         ji.put("base64_image", base64_image);
-
-
 
 
         System.out.println(ji.toString());
@@ -720,27 +359,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
-
+        flimp = respAll(jsonInputString);
         return flimp;
     }
     public String getBalance() throws IOException {
@@ -748,28 +368,7 @@ return flimp;
 
         String flimp; //return
 
-
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
-
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
-
         JSONObject jo = new JSONObject();
-
-
-
-
-
-
-
-
 
 
         jo.put("method", "getBalance");
@@ -781,26 +380,8 @@ return flimp;
 
         System.out.println(jo.toString());
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
 
-
-        }
-
-
-
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            // System.out.println(response.toString());
-            flimp = response.toString();
-        }
+        flimp = respAll(jsonInputString);
 
         return flimp;
     }
@@ -810,18 +391,9 @@ return flimp;
         String flimp; //return
 
 
-        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
 
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
 
-        con.setRequestMethod("POST");
-
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-
-        con.setRequestProperty("Accept", "application/json");
-
-        con.setDoOutput(true);
-
+        // create json
         JSONObject jo = new JSONObject();
 
         JSONObject ji = new JSONObject();
@@ -842,13 +414,35 @@ return flimp;
 
         System.out.println(jo.toString());
 
+        flimp = respAll(jsonInputString);
+
+        return flimp;
+    }
+
+    public String respAll(String jsonInputString ) throws IOException {
+
+        String flimp = null;
+
+        URL url = new URL ("http://127.0.0.1:" + this.port + "/api/1.0");
+
+        HttpURLConnection con = (HttpURLConnection)url.openConnection();
+
+        con.setRequestMethod("POST");
+
+        con.setRequestProperty("Content-Type", "application/json; utf-8");
+
+        con.setRequestProperty("Accept", "application/json");
+
+        con.setDoOutput(true);
+
+
+
         try(OutputStream os = con.getOutputStream()) {
             byte[] input = jsonInputString.getBytes("utf-8");
             os.write(input, 0, input.length);
 
 
         }
-
 
 
 
@@ -863,8 +457,13 @@ return flimp;
             flimp = response.toString();
         }
 
+
         return flimp;
     }
+
+
+
+
 
 }
 
