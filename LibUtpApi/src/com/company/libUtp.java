@@ -363,13 +363,20 @@ public String getSystemInfo() throws IOException {
         flimp = respAll(jsonInputString);
         return flimp;
     }
-    public String getBalance() throws IOException {
+    public String getBalance(String currency) throws IOException {
 
 
         String flimp; //return
 
+
         JSONObject jo = new JSONObject();
 
+        JSONObject ji = new JSONObject();
+
+
+        ji.put("currency", currency);
+
+        jo.put("params", ji);
 
         jo.put("method", "getBalance");
 
@@ -385,7 +392,7 @@ public String getSystemInfo() throws IOException {
 
         return flimp;
     }
-    public String sendPayment(String cardid, String to, String amount, String comment /*String fromCard*/) throws IOException {
+    public String sendPayment(String cardid, String to, String amount, String comment, String currency /*String fromCard*/) throws IOException {
 
 
         String flimp; //return
@@ -402,6 +409,9 @@ public String getSystemInfo() throws IOException {
         ji.put("amount", amount);
         ji.put("comment", comment);
         ji.put("cardid", cardid);
+        ji.put("currency", currency);
+
+
 
 
 
@@ -418,6 +428,99 @@ public String getSystemInfo() throws IOException {
 
         return flimp;
     }
+
+
+    public String sendInstantMessage(String to, String text) throws IOException {
+
+
+        String flimp; //return
+
+
+
+
+        // create json
+        JSONObject jo = new JSONObject();
+
+        JSONObject ji = new JSONObject();
+
+        ji.put("to", to);
+        ji.put("text", text);
+
+
+
+
+        jo.put("method", "sendInstantMessage");
+        jo.put("params", ji);
+        jo.put("token", this.token);
+
+        String jsonInputString;
+        jsonInputString = jo.toString();
+
+        System.out.println(jo.toString());
+
+        flimp = respAll(jsonInputString);
+
+        return flimp;
+    }
+
+    public String requestTreasuryUUSDSupply() throws IOException {
+
+
+        String flimp; //return
+
+
+
+
+        // create json
+        JSONObject jo = new JSONObject();
+
+        JSONObject ji = new JSONObject();
+
+
+
+        jo.put("method", "requestTreasuryUUSDSupply");
+        jo.put("params", ji);
+        jo.put("token", this.token);
+
+        String jsonInputString;
+        jsonInputString = jo.toString();
+
+        System.out.println(jo.toString());
+
+        flimp = respAll(jsonInputString);
+
+        return flimp;
+    }
+
+    public String getTreasuryUUSDSupply() throws IOException {
+
+
+        String flimp; //return
+
+
+
+
+        // create json
+        JSONObject jo = new JSONObject();
+
+        JSONObject ji = new JSONObject();
+
+
+
+        jo.put("method", "getTreasuryUUSDSupply");
+        jo.put("params", ji);
+        jo.put("token", this.token);
+
+        String jsonInputString;
+        jsonInputString = jo.toString();
+
+        System.out.println(jo.toString());
+
+        flimp = respAll(jsonInputString);
+
+        return flimp;
+    }
+
 
     public String respAll(String jsonInputString ) throws IOException {
 
@@ -460,8 +563,6 @@ public String getSystemInfo() throws IOException {
 
         return flimp;
     }
-
-
 
 
 
